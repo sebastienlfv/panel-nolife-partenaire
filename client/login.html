@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Administrateur - Nolife Partenaires</title>
+  <link rel="stylesheet" href="/client/style.css">
+  <script src="/client/js/auth.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="/client/logo-Nolife.webp">
+    </nav>
+  </header>
+  <main class="main-login">
+    <section class="login-container">
+      <h1>LOGIN</h1>
+      <form class="login-input" onsubmit="return login()">
+        <div class="email-input">
+          <label>EMAIL</label>
+          <input id="email" type="email">
+        </div>
+        <div class="password-input">
+          <label>MOT DE PASSE</label>
+          <input id="password" type="password">
+        </div>
+        <button class="login-submit">Se connecter</button>
+        <p class="status-login"></p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

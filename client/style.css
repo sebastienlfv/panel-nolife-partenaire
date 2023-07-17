@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family:system-ui, -apple-system;
+}
+
+.logout {
+  cursor: pointer;
+  position: absolute;
+  right: 100px;
+}
+
+header {
+  background-color: rgb(98, 101, 105);
+  box-shadow: 7px 7px 7px rgb(202, 202, 202);
+}
+
+header nav {
+  display: flex;
+  padding: 10px;
+  height: 100px;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+  gap: 100px;
+  font-family:system-ui, -apple-system;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  letter-spacing: 2px;
+}
+
+header nav .menu {
+  display: flex;
+  gap: 50px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header nav img {
+  width: 150px;
+  object-fit: contain;
+}
+
+.login-container {
+  background-color: rgb(192, 192, 192);
+  box-shadow: 7px 7px 7px rgb(202, 202, 202);
+  height: 300px;
+  width: 600px;
+  margin: auto;
+  margin-top: 150px;
+}
+
+.login-container h1 {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.login-container form {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.login-container form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container form button {
+  padding: 10px 40px;
+  margin-top: 20px;
+}
+
+.no-partners {
+  font-size: 25px;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-left: 20px;
+  display: none;
+}
+
+.list-partners {
+  margin-left: 20px;
+  margin-top: 20px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 80%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+.partner-container {
+  width: 250px;
+}
+
+.partner-container img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+}
+
+.partner-container div {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ font-size: 18px;
+ margin-top: 10px;
+}
+
+.partner-container i {
+  background-color: #8D6DC4;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
