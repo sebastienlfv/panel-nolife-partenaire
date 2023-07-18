@@ -50,6 +50,28 @@ axios.get(urlAPIpartner + 'partner')
       twitchIcon.classList.add('fa-twitch')
       twitchLink.appendChild(twitchIcon)
 
+      const deleteIcon = document.createElement('i')
+      deleteIcon.classList.add('fa-solid')
+      deleteIcon.classList.add('fa-xmark')
+      deleteIcon.dataset.id = partners.data[i].id
+      divPartner.appendChild(deleteIcon)
+
+      deleteIcon.addEventListener('click', (event) => {
+        const id = event.target.dataset.id
+        console.log('id du partenaire', id)
+
+        if(window.confirm('Êtes-vous sûr de vouloir supprimer ce partenaire?')) {
+          axios.delete(urlAPIpartner + 'partner/' + id, { headers: { 'Authorization': `Bearer ${token}` } })
+            .then(response => {
+              console.log('Partenaire supprimé:', response);
+              window.location.reload()
+            })
+            .catch(err => {
+              console.error('Erreur lors de la suppression du partenaire:', err);
+            });
+        }        
+      })
+
     }
   })
   .catch(err => {
