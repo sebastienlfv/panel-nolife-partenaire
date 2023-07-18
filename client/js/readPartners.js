@@ -1,10 +1,15 @@
-const urlAPIpartners = 'https://ip104.ip-149-202-87.eu:5000/api/'
+const urlAPIpartner = 'https://ip104.ip-149-202-87.eu:5000/api/'
 // const urlAPIpanel = 'http://localhost:3500/api/'
 
 const noPartners = document.querySelector('.no-partners')
 const listPartners = document.querySelector('.list-partners')
 
-axios.get(urlAPIpartners + 'partner')
+const token = localStorage.getItem('token')
+if(token === null) {
+  window.location.href = '../client/connect.html'
+}
+
+axios.get(urlAPIpartner + 'partner')
   .then(partners => {
     console.log('API partenaires', partners);
 
@@ -23,7 +28,7 @@ axios.get(urlAPIpartners + 'partner')
       listPartners.appendChild(partnerContainer)
 
       const imgPartner = document.createElement('img')
-      imgPartner.src = partners.data[i].partner_picture  // Correction ici
+      imgPartner.src = partners.data[i].partner_picture 
       partnerContainer.appendChild(imgPartner)
 
 
@@ -32,11 +37,12 @@ axios.get(urlAPIpartners + 'partner')
       partnerContainer.appendChild(divPartner)
 
       const pseudoPartner = document.createElement('p')
-      pseudoPartner.innerHTML = partners.data[i].partner_pseudo // Correction ici
+      pseudoPartner.innerHTML = partners.data[i].partner_pseudo 
       divPartner.appendChild(pseudoPartner)
 
       const twitchLink = document.createElement('a')
-      twitchLink.href = partners.data[i].partner_twitch // Correction ici
+      twitchLink.href = partners.data[i].partner_twitch 
+      twitchLink.target = 'blank'
       divPartner.appendChild(twitchLink)
 
       const twitchIcon = document.createElement('i')

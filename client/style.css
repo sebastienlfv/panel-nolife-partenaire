@@ -10,6 +10,10 @@
   right: 100px;
 }
 
+main {
+  padding: 20px;
+}
+
 header {
   background-color: rgb(98, 101, 105);
   box-shadow: 7px 7px 7px rgb(202, 202, 202);
@@ -99,12 +103,13 @@ header nav img {
 
 .partner-container {
   width: 250px;
+  cursor: pointer;
 }
 
 .partner-container img {
   width: 250px;
   height: 250px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .partner-container div {
@@ -120,4 +125,28 @@ header nav img {
   color: #fff;
   padding: 10px;
   border-radius: 5px;
+}
+
+.add-container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.add-container div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.add-container input {
+  height: 20px;
+  width: 200px;
+}
+
+.add-container button {
+  width: 200px;
+  height: 30px;
+  margin-top: 20px;
 }

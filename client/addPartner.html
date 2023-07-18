@@ -6,7 +6,7 @@
   <title>Ajouter Partenaire - Nolife Partenaires</title>
   <link rel="stylesheet" href="/client/style.css">
   <script src="/client/js/index.js" defer></script>
-  <script src="/client/js/readPartners.js" defer></script>
+  <script src="/client/js/addPartner.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://kit.fontawesome.com/a143a2c033.js" crossorigin="anonymous"></script>
 </head>
@@ -21,8 +21,23 @@
       </div>
     </nav>
   </header>
-  <main class="main">
-
+  <main>
+    <h1>Ajout d'un partenaire</h1>
+    <div class="add-container">
+      <div>
+        <label>Pseudo du partenaire : </label>
+        <input type="text" class="pseudoInput">
+      </div>
+      <div>
+        <label>Lien twitch du partenaire : </label>
+        <input type="text" class="twitchInput">
+      </div>
+      <div>
+        <label>L'image du partenaire : </label>
+        <input type="text" class="imgInput">
+      </div>
+      <button class="addPartner">Enregistrer</button>
+    </div>
   </main>
 </body>
 </html>
