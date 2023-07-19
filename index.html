@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liste Partenaires - Nolife Partenaires</title>
   <link rel="stylesheet" href="/client/style.css">
-  <script src="/client/js/index.js" defer></script>
-  <script src="/client/js/readPartners.js" defer></script>
+  <script src="./client/js/index.js" defer></script>
+  <script src="./client/js/readPartners.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://kit.fontawesome.com/a143a2c033.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
     <nav>
-      <img src="/client/logo-Nolife.webp">
+      <img src="./client/logo-Nolife.webp">
       <div class="menu">
         <a href="/">Liste des partenaire</a>
-        <a href="/client/addPartner.html">Ajouter un partneraire</a>
+        <a href="./client/addPartner.html">Ajouter un partneraire</a>
         <a class="logout">Se deconnecter</a>
       </div>
     </nav>
@@ -26,6 +26,25 @@
     <div class="list-partners">
       <!-- INJECTER PAR LE JAVASCRIPT -->
     </div>
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+        <span style="font-size: 40px;" class="closeEdit">&times;</span>
+        <p style="margin-top: 20px;">Informations actuelles :</p>
+    
+        <form id="editForm">
+          <label for="partner-pseudo">Pseudo :</label>
+          <input type="text" id="partner-pseudo" name="partner-pseudo" required>
+    
+          <label for="partner-twitch">Twitch :</label>
+          <input type="text" id="partner-twitch" name="partner-twitch" required>
+
+          <label for="partner-picture">Image :</label>
+          <input type="text" id="partner-picture" name="partner-picture" required>
+    
+          <input style="margin-top: 20px; height: 30px;" type="submit" value="Modifier">
+        </form>
+      </div>
+    </div>    
   </main>
 </body>
 </html>

@@ -3,10 +3,10 @@ const logoutButton = document.querySelector('.logout')
 
 if (!isLoggedIn) {
     // Utilisateur non connecté
-    window.location.href = '/client/login.html'
+    window.location.href = '../client/login.html'
 }
 
 logoutButton.addEventListener('click', () => {
     localStorage.clear()
-    window.location.href = '/client/login.html'
+    window.location.href = '../client/login.html'
 })

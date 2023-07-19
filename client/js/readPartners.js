@@ -72,6 +72,59 @@ axios.get(urlAPIpartner + 'partner')
         }        
       })
 
+      const editIcon = document.createElement('i');
+      editIcon.classList.add('fa-solid');
+      editIcon.classList.add('fa-edit');
+      editIcon.dataset.id = partners.data[i].id;
+      divPartner.appendChild(editIcon);
+
+      editIcon.addEventListener('click', (event) => {
+        const id = event.target.dataset.id
+        console.log('id du partenaire', id);
+
+        // Récupérer les informations actuelles du partenaire
+        const currentPartner = partners.data.find(partner => partner.id == id);
+
+        // Remplir les champs d'entrée avec les informations actuelles
+        document.getElementById('partner-picture').value = currentPartner.partner_picture;
+        document.getElementById('partner-pseudo').value = currentPartner.partner_pseudo;
+        document.getElementById('partner-twitch').value = currentPartner.partner_twitch;
+
+        // Afficher la modale
+        document.getElementById('editModal').style.display = 'block';
+        document.querySelector('.closeEdit').addEventListener('click', () => {
+          document.getElementById('editModal').style.display = 'none';
+        })
+
+        document.getElementById('editForm').addEventListener('submit', (event) => {
+          event.preventDefault();
+        
+          // Récupérer les nouvelles valeurs du formulaire
+          let newPartnerData = {
+            partner_picture: document.getElementById('partner-picture').value,
+            partner_pseudo: document.getElementById('partner-pseudo').value,
+            partner_twitch: document.getElementById('partner-twitch').value,
+          };
+        
+          // Si un champ est vide, le remplacer par l'information actuelle
+          if (!newPartnerData.partner_picture) newPartnerData.partner_picture = currentPartner.partner_picture;
+          if (!newPartnerData.partner_pseudo) newPartnerData.partner_pseudo = currentPartner.partner_pseudo;
+          if (!newPartnerData.partner_twitch) newPartnerData.partner_twitch = currentPartner.partner_twitch;
+        
+          // Envoie une requête PUT ou PATCH à l'API pour mettre à jour le partenaire
+          axios.put(urlAPIpartner + 'partner/' + id, newPartnerData, { headers: { 'Authorization': `Bearer ${token}` } })
+            .then(response => {
+              console.log('Partenaire modifié:', response);
+        
+              // Fermer la modale et recharger la page
+              document.getElementById('editModal').style.display = 'none';
+              window.location.reload();
+            })
+            .catch(err => {
+              console.error('Erreur lors de la modification du partenaire:', err);
+            });
+        });        
+      })
     }
   })
   .catch(err => {
